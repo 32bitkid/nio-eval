@@ -2,6 +2,9 @@
   "name": "nio-eval",
   "version": "0.0.0",
   "description": "Evaluation for n.io",
+  "devDependencies": {
+    "eslint": "^1.10.3"
+  },
   "author": "James Holmes <32bitkid@gmail.com> (http://refactorman.com)",
   "private": true,
   "license": "UNLICENSED"
