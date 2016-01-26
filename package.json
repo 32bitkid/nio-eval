@@ -3,6 +3,7 @@
   "version": "0.0.0",
   "description": "Evaluation for n.io",
   "dependencies": {
+    "d3": "^3.5.13",
     "niojs": "^1.1.5"
   },
   "devDependencies": {
