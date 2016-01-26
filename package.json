@@ -5,6 +5,9 @@
   "devDependencies": {
     "eslint": "^1.10.3"
   },
+  "scripts": {
+    "js:lint": "eslint src"
+  },
   "author": "James Holmes <32bitkid@gmail.com> (http://refactorman.com)",
   "private": true,
   "license": "UNLICENSED"
