@@ -1,8 +1,12 @@
 // Libraries
 var nio = require('niojs');
 
+// View Models
+var historicalVM = require('./historical-vm');
+
 // Visualization
 var gauge = require('./gauge');
+var spark = require('./spark');
 
 // Initialize Sources
 var source = nio.source.socketio(
@@ -39,3 +43,20 @@ var instagramGauge = gauge({
 // Wire stream into renderer
 sources.twitter.pipe(nio.func(twitterGauge));
 sources.instagram.pipe(nio.func(instagramGauge));
+
+// Create Historical Sparklines
+var twitterSpark = spark({
+  sel:'#twitter-spark',
+  height: size/6,
+  width: size
+});
+
+var instagramSpark = spark({
+  sel:'#instagram-spark',
+  height: size/6,
+  width: size
+});
+
+// Wire stream into renderer
+sources.twitter.pipe(historicalVM()).pipe(nio.func(twitterSpark));
+sources.instagram.pipe(historicalVM()).pipe(nio.func(instagramSpark));
