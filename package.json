@@ -17,8 +17,8 @@
     "watchify": "^3.7.0"
   },
   "scripts": {
-    "js": "mkdir -p public/js && browserify ./src/app.js -t uglifyify -o public/js/bundle.js",
-    "js:watch": "mkdir -p public/js && watchify ./src/app.js -t uglifyify -o public/js/bundle.js -v",
+    "js": "mkdir -p public/js && browserify ./src/app.js -g uglifyify -o public/js/bundle.js",
+    "js:watch": "mkdir -p public/js && watchify ./src/app.js -g uglifyify -o public/js/bundle.js -v",
     "js:lint": "eslint src",
     "css": "mkdir -p public/css && lessc less/app.less --autoprefix=\"last 2 versions\" --clean-css public/css/bundle.css",
     "server": "http-server -p 4000 public/"
