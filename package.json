@@ -9,13 +9,15 @@
   "devDependencies": {
     "browserify": "^13.0.0",
     "eslint": "^1.10.3",
+    "http-server": "^0.8.5",
     "uglifyify": "^3.0.1",
     "watchify": "^3.7.0"
   },
   "scripts": {
     "js": "mkdir -p public/js && browserify ./src/app.js -t uglifyify -o public/js/bundle.js",
     "js:watch": "mkdir -p public/js && watchify ./src/app.js -t uglifyify -o public/js/bundle.js -v",
-    "js:lint": "eslint src"
+    "js:lint": "eslint src",
+    "server": "http-server -p 4000 public/"
   },
   "author": "James Holmes <32bitkid@gmail.com> (http://refactorman.com)",
   "private": true,
